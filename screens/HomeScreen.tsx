@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Dimensions, StyleSheet, Text, View } from 'react-native'
+import { Dimensions, StyleSheet, ScrollView, View } from 'react-native'
 import Album from '../components/Album/Album'
 import { RootTabScreenProps } from '../types'
 
@@ -47,40 +47,41 @@ const albumMeta = [
 ]
 
 export default function HomeScreen({ navigation }: RootTabScreenProps<'Home'>) {
+  const gap = 10
+
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
+      <Album
+        meta={albumMeta[0]}
+        size={Dimensions.get('window').width - gap * 2}
+        gap={gap}
+      />
       <AlbumGrid />
-    </View>
+    </ScrollView>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
     borderColor: 'red',
+    padding: 12 / 2,
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
     color: 'white',
   },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
 })
 
 const AlbumGrid = (): JSX.Element => {
   const [window, setWindow] = React.useState(Dimensions.get('window'))
-  const gap = window.width < 768 ? 12 : 20
+  const gap = window.width < 768 ? 10 : 20
   const count = window.width < 768 ? 3 : 4
   const size = window.width / count - gap - (count + 1)
 
   return (
-    <View style={[albumStyles.container, { padding: gap / 2 }]}>
+    <View style={albumStyles.container}>
       {albumMeta.map((m) => {
         return <Album key={m.id} meta={m} size={size} gap={gap / 2} />
       })}
@@ -94,5 +95,6 @@ const albumStyles = StyleSheet.create({
     width: '100%',
     flexDirection: 'row',
     flexWrap: 'wrap',
+    marginBottom: 12,
   },
 })

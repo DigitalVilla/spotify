@@ -5,7 +5,7 @@ import { RootTabScreenProps } from '../types'
 
 const albumMeta = [
   {
-    uri: 'https://assets.digitalvilla.ca/pages/mac-rainbow.jpg',
+    uri: 'https://assets.digitalvilla.ca/pages/old-games.jpg',
     headline: 'First Album',
     id: '1232',
   },
@@ -15,7 +15,7 @@ const albumMeta = [
     id: '1231',
   },
   {
-    uri: 'https://assets.digitalvilla.ca/pages/mac-rainbow.jpg',
+    uri: 'https://assets.digitalvilla.ca/pages/old-games.jpg',
     headline: 'First Album',
     id: '1233',
   },
@@ -25,7 +25,7 @@ const albumMeta = [
     id: '1235',
   },
   {
-    uri: 'https://assets.digitalvilla.ca/pages/mac-rainbow.jpg',
+    uri: 'https://assets.digitalvilla.ca/pages/old-games.jpg',
     headline: 'First Album',
     id: '1236',
   },
@@ -35,7 +35,7 @@ const albumMeta = [
     id: '1234',
   },
   {
-    uri: 'https://assets.digitalvilla.ca/pages/mac-rainbow.jpg',
+    uri: 'https://assets.digitalvilla.ca/pages/old-games.jpg',
     headline: 'First Album',
     id: '1237',
   },

@@ -11,10 +11,9 @@ export type AlbumProps = {
   gap?: number
 }
 
-export default function Album(props: AlbumProps) {
+export default function Album(props: AlbumProps): JSX.Element {
   return (
     <View style={[styles.container, { margin: props.gap || 2 }]}>
-      {/* // Image */}
       <Image
         style={[
           styles.image,

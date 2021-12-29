@@ -1,25 +1,22 @@
 import * as React from 'react'
-import { Dimensions, StyleSheet, Image, Text, View } from 'react-native'
+import { StyleSheet, Image, Text, View } from 'react-native'
+import { AlbumType } from '../../types'
 
 export type AlbumProps = {
-  meta: {
-    id: string
-    uri: string
-    headline: string
-  }
   size?: number | string
+  meta: AlbumType
   gap?: number
 }
 
 export default function Album(props: AlbumProps): JSX.Element {
   return (
-    <View style={[styles.container, { margin: props.gap || 2 }]}>
+    <View style={[styles.container, { margin: props.gap || 0 }]}>
       <Image
         style={[
           styles.image,
           {
-            height: props.size || 100,
-            width: props.size || 100,
+            height: props.size || 150,
+            width: props.size || 150,
           },
         ]}
         source={{ uri: props.meta.uri }}
@@ -30,10 +27,7 @@ export default function Album(props: AlbumProps): JSX.Element {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    // alignItems: 'center',
-    justifyContent: 'center',
-  },
+  container: {},
   text: {
     color: 'gray',
   },
